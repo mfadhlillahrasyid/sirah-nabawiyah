@@ -1,3 +1,6 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+
 function App() {
   interface ListItem {
     id: number;
@@ -36,6 +39,29 @@ function App() {
       name: "Rekomendasi kitab untuk mengenal Nabi ﷺ lebih jauh, utuh dan mendalam! Membahas sejarah Nabi Muhammad ﷺ secara lengkap dari lahir hingga wafat dengan penulisan alur cerita seperti membaca *NOVEL (SERU, ASYIK & MENDEBARKAN)*"
     }
   ];
+
+  const testimoni = [
+    {
+      id: 1,
+      img: "/testimoni/1.webp"
+    },
+    {
+      id: 2,
+      img: "/testimoni/2.webp"
+    },
+    {
+      id: 3,
+      img: "/testimoni/3.webp"
+    },
+    {
+      id: 4,
+      img: "/testimoni/4.webp"
+    },
+    {
+      id: 5,
+      img: "/testimoni/5.webp"
+    }
+  ];
   return (
     <>
       <body className="bg-neutral-200 text-neutral-800">
@@ -69,7 +95,7 @@ function App() {
           <img src="/1.webp" alt="Sirah Nabawiyah Books" />
           {/* Section 2 */}
           <div className="p-10">
-            <h1 className="font-bold tracking-tight text-2xl mt-4 text-center">
+            <h1 className="font-extrabold tracking-tight text-2xl mt-4">
               Apa Itu Sirah Nabawiyah?
             </h1>
             <p className="mt-3 leading-6">
@@ -122,7 +148,7 @@ function App() {
           <img src="/2.webp" alt="Sirah Nabawiyah Books" />
           {/* Section 4 */}
           <div className="p-10">
-            <h1 className="font-bold tracking-tight text-2xl mt-4 text-center">
+            <h1 className="font-extrabold tracking-tight text-2xl mt-4">
               Kenapa Kamu Harus Membaca Sirah Nabawiyah Sekarang?
             </h1>
             <p className="mt-3 leading-6">
@@ -148,17 +174,20 @@ function App() {
           <img src="/3.webp" alt="Sirah Nabawiyah Books" />
           {/* Section 5 */}
           <div className="p-10">
-            <h1 className="font-bold tracking-tight text-2xl mt-4 text-center">
+            <h1 className="font-extrabold tracking-tight text-2xl mt-4">
               Buku Ini Berbeda!
             </h1>
             <p className="mt-3 leading-6">
               Buku Sejarah Nabi Muhammad ﷺ Terbaik & Paling Terpopuler
             </p>
             <p className="mt-3 leading-6">
-              Setiap kalimat dan lembaran buku ini akan membuat kita haru,
-              senang, sedih, juga kadang sampai terbawa dalam tetesan air mata.
-              Juga mengerti soal kegigihan, kesabaran, persahabatan, pengorbanan
-              dan sangat banyak lagi.
+              Setiap kalimat dan lembaran buku ini{" "}
+              <mark>
+                akan membuat kita haru, senang, sedih, juga kadang sampai
+                terbawa dalam tetesan air mata
+              </mark>
+              . Juga mengerti soal kegigihan, kesabaran, persahabatan,
+              pengorbanan dan sangat banyak lagi.
             </p>
             <ul className="space-y-3 mt-3">
               {list2.map((item: ListItem) => (
@@ -169,6 +198,34 @@ function App() {
               ))}
             </ul>
           </div>
+          {/* Swiper */}
+          <div className="p-10">
+            <h1 className="font-extrabold tracking-tight text-2xl mt-4 text-center">
+              Ini Kata Mereka yang Sudah baca Buku Sirah Nabawiyah
+            </h1>
+          </div>
+          <Swiper
+            slidesPerView={1.3}
+            spaceBetween={20}
+            centeredSlides={true}
+            pagination={{
+              clickable: true
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {testimoni.map((item) => (
+              <SwiperSlide key={item.id}>
+                <div className="flex mb-10 justify-center items-center">
+                  <img
+                    src={item.img}
+                    alt={`Testimoni ${item.id}`}
+                    className="rounded-lg shadow-md max-w-full h-auto"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </body>
     </>
