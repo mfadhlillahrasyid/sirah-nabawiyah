@@ -1,13 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
-declare global {
-  interface Window {
-    CallToAction: () => void;
-    fbq: (...args: unknown[]) => void;
-  }
-}
-
 function App() {
   interface ListItem {
     id: number;
@@ -109,16 +102,6 @@ function App() {
     { label: "Kode", value: "TBS774" },
     { label: "ISBN", value: "978-602-9896-831" },
   ];
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    if (typeof window.fbq !== 'undefined') {
-      window.fbq('track', 'AddToCart');
-    }
-    setTimeout(() => {
-      window.location.href = e.currentTarget.href;
-    }, 500);
-  };
 
   return (
     <>
@@ -406,7 +389,6 @@ function App() {
             <div className="max-w-xs mx-auto">
               <a
                 href="https://wa.me/+6281214469668?text=Assalammualaikum%20kak%2C%20Buku%20Sirah%20Nabawiyah-nya%20Masih%20Tersedia%20%3F%20"
-                onClick={handleClick}
                 className="mt-5 w-full flex items-center justify-center gap-3 px-4 py-3 rounded-2xl bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold shadow-lg transition-all duration-300 ease-in-out transform active:scale-95 active:ring-4 active:ring-green-300"
               >
                 <img
