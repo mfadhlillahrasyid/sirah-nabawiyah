@@ -13,7 +13,9 @@ const OrderPage: React.FC = () => {
     // Redirect ke wa.me setelah countdown selesai
     if (count === 0) {
       const phoneNumber = "6281214469668"; // Ganti dengan nomor WhatsApp Anda
-      const message = encodeURIComponent("Assalammualaikum kak, Buku Sirah Nabawiyah-nya Masih Tersedia ?");
+      const message = encodeURIComponent(
+        "Assalammualaikum kak, Buku Sirah Nabawiyah-nya Masih Tersedia ?"
+      );
       window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
       clearInterval(timer); // Hentikan timer setelah redirect
     }
@@ -22,11 +24,15 @@ const OrderPage: React.FC = () => {
   }, [count]);
 
   return (
-    <div className="min-h-screen mx-auto max-w-md bg-white text-center flex flex-col justify-center items-center gap-y-2">
-      <span className="text-5xl font-bold">{count}</span>
-      <h1 className="font-bold text-lg">Kamu akan di sambungkan ke Whatsapp</h1>
-      <p>Harap tunggu sebentar</p>
-    </div>
+    <body className="bg-neutral-200 text-neutral-800">
+      <div className="min-h-screen mx-auto max-w-md bg-white text-center flex flex-col justify-center items-center gap-y-2 p-16">
+        <span className="text-5xl font-bold">{count}</span>
+        <h1 className="font-bold text-lg">
+          Kamu akan di sambungkan ke Whatsapp
+        </h1>
+        <p>Harap tunggu sebentar...</p>
+      </div>
+    </body>
   );
 };
 
