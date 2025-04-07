@@ -393,7 +393,7 @@ export default function App() {
             </p>
             <img src="/arrow.webp" className="w-40 mx-auto my-6" alt="" />
             <div className="max-w-xs mx-auto">
-              <a
+              <a type="button"
                 href="https://wa.me/+6281214469668?text=Assalammualaikum%20kak%2C%20Buku%20Sirah%20Nabawiyah-nya%20Masih%20Tersedia%20%3F%20"
                 className="mt-5 w-full flex items-center justify-center gap-3 px-4 py-3 rounded-2xl bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold shadow-lg transition-all duration-300 ease-in-out transform active:scale-95 active:ring-4 active:ring-green-300"
               >
