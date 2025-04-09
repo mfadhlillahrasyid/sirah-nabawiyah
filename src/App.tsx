@@ -1,12 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import { Link } from "react-router-dom";
-
-declare global {
-  interface Window {
-    fbq: (...args: unknown[]) => void;
-  }
-}
+import { CallToActionButton } from "./components/CallToActionButton";
 
 export default function App() {
   interface ListItem {
@@ -394,17 +388,7 @@ export default function App() {
             </p>
             <img src="/arrow.webp" className="w-40 mx-auto my-6" alt="" />
             <div className="max-w-xs mx-auto">
-              <Link type="button"
-                to="/order"
-                className="mt-5 w-full flex items-center justify-center gap-3 px-4 py-3 rounded-2xl bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold shadow-lg transition-all duration-300 ease-in-out transform active:scale-95 active:ring-4 active:ring-green-300"
-              >
-                <img
-                  src="/whatsapp.webp"
-                  alt="WhatsApp"
-                  className="w-15 h-15"
-                />
-                <span>Pesan Sekarang Juga!</span>
-              </Link>
+              <CallToActionButton />
             </div>
           </div>
           {/* Footer */}
