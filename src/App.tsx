@@ -407,6 +407,7 @@ export default function App() {
               <p className="text-white text-sm">
                 © Copyright - All Right Reserved | 2025
               </p>
+              <span>Design by <a href="https://fadhli.id" class="text-cyan-400 font-semibold" target="_blank">Fadhli</a> 🖤</span>
             </div>
           </div>
         </div>
